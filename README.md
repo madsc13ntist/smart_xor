@@ -33,14 +33,14 @@ $ cabextract 4378156187_5.showlist.gif
 4378156187_5.showlist.gif: no valid cabinets found
 ~~~~
 
-the gif doesn't appear to contain a valid cabinet stream but we know (from the malware driving this infection) that the cab contains an executable called "javae.exe". The stage-1 malware that it is going to xor by 0x78 and ignore null bytes (0x0) and the key (0x78) and extract a stage-2 executable from the cab. (but you could also find some of that with a quick xorsearch for the cabinet header...)
+the gif doesn't appear to contain a valid cabinet stream but we know (from the malware driving this infection) that the cab contains an executable called "javae.exe". We know from the stage-1 malware that it is going to xor by 0x78 and ignore null bytes (0x0) and the key (0x78) and extract a stage-2 executable from the cab. (but you could also find some of that with a quick xorsearch for the cabinet header...)
 
 ~~~~
 $ xorsearch 4378156187_5.showlist.gif MSCF
 Found XOR 78 position 2800: MSCFxxxx.Q.xxxxx,xxxxxxx...x.xxxxxxxFxxx.x.xx..xxx
 ~~~~
 
-xor the gif by 0x78 (ignoring the key and null bytes).
+So we xor the gif by 0x78 (ignoring the key and null bytes).
 
 ~~~~
 $ ./smart_xor.py -k 0x78 -i 0x0,0x78 4378156187_5.showlist.gif 
