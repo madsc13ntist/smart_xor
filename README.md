@@ -6,7 +6,7 @@ Perform conditional bitwise XOR operations on files.
 ~~~~
 Usage: smart_xor.py [options] args
 Perform a conditional XOR on a file.
-Copyright (c) 2012 Joseph Zeranski <madsc13ntist@gmail.com>
+Copyright (c) 2012 Joseph Zeranski <madsc13ntist gmail.com>
 
 Options:
   -h, --help  show this help message and exit
