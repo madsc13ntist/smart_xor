@@ -3,6 +3,26 @@ smart_xor
 
 Perform conditional bitwise XOR operations on files.
 
+~~~~
+Usage: smart_xor.py [options] args
+Perform a conditional XOR on a file.
+Copyright (c) 2012 Joseph Zeranski <madsc13ntist@gmail.com>
+
+Options:
+  -h, --help  show this help message and exit
+  -v          More verbose output regarding XORing.
+  -f OUTFILE  the filename to save the patched file to.
+  -k KEY      the XOR key to use.  example: 149, 0x95
+  -o OFFSET   offsets to skip regardless of byte value.
+              Supports: comma seperated (no spaces). int, hex (ranges)
+              example : 42,0x95,25-50,0x14-0x1A,250-0xFF
+  -s          ONLY XOR offsets unless value is to be ignored. (used with '-o')
+  -i IGNORE   byte values to ignore.
+              Supports: comma seperated (no spaces). int, hex (ranges)
+              example : 42,0x95,25-50,0x14-0x1A,250-0xFF
+~~~~
+
+
 Example Usage
 =====
 
