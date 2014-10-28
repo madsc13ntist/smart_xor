@@ -33,7 +33,7 @@ $ cabextract 4378156187_5.showlist.gif
 4378156187_5.showlist.gif: no valid cabinets found
 ~~~~
 
-the gif doesn't appear to contain a valid cabinet stream but we know (from the malware driving this infection) that the cab contains an executable called "javae.exe". We know from the stage-1 malware that it is going to xor by 0x78 and ignore null bytes (0x0) and the key (0x78). (but you could find some of that with xorsearch...)
+the gif doesn't appear to contain a valid cabinet stream but we know (from the malware driving this infection) that the cab contains an executable called "javae.exe". The stage-1 malware that it is going to xor by 0x78 and ignore null bytes (0x0) and the key (0x78) and extract a stage-2 executable from the cab. (but you could find some of that with a quick xorsearch...)
 
 ~~~~
 $ xorsearch 4378156187_5.showlist.gif javae
