@@ -40,7 +40,7 @@ $ xorsearch 4378156187_5.showlist.gif MSCF
 Found XOR 78 position 2800: MSCFxxxx.Q.xxxxx,xxxxxxx...x.xxxxxxxFxxx.x.xx..xxx
 ~~~~
 
-So we xor the gif by 0x78 (ignoring the key and null bytes).
+xor the gif by 0x78 (ignoring the key and null bytes).
 
 ~~~~
 $ ./smart_xor.py -k 0x78 -i 0x0,0x78 4378156187_5.showlist.gif 
@@ -48,7 +48,7 @@ Using XOR key:    0x78
 Ignoring values:  0x0, 0x78
 ~~~~
 
-so now we have the patched (xored) gif.  so we extract the executable from the cabinet.
+Now we have the patched (xored) gif.  We can now extract the executable from the cabinet.
 ~~~~
 $ cabextract 4378156187_5.showlist.gif.patched 
 Extracting cabinet: 4378156187_5.showlist.gif.patched
@@ -57,7 +57,7 @@ Extracting cabinet: 4378156187_5.showlist.gif.patched
 All done, no errors.
 ~~~~
 
-Success. :)
+Success! :)
 
 ~~~~
 $ file -i javae.exe 
